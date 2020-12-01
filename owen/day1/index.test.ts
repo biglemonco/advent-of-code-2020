@@ -1,6 +1,8 @@
 import { bruteForce } from './index';
 
-const input: string = `
+import input from './input.txt';
+
+const sampleInput: string = `
 1721
 979
 366
@@ -9,6 +11,12 @@ const input: string = `
 1456
 `;
 
-test('input works', () => {
-  expect(bruteForce(input)).toBe(514579);
+test('sample input works', () => {
+  expect(bruteForce(sampleInput)).toBe(514579);
+});
+
+test('real input works', () => {
+  const result = bruteForce(input);
+  console.log(result);
+  expect(result).toBe(567171);
 });

@@ -13,18 +13,13 @@ const prepare = (input: string): number[] => {
  * Time to get out the sledge hammer...
  * @param input String input
  */
-export const bruteForce = (input: string) => {
+export const bruteForce = (input: string): number => {
   const arr = prepare(input);
-  console.log(arr);
-  const val = arr.find((number: number) => {
-    const match = arr.find((matchingNumber: number) => {
-      if (number + matchingNumber === 2020) return matchingNumber;
-    });
-    if (!!match) {
-      console.log(number, match, number * match);
-      return number * match;
-    }
-  });
-  console.log(val);
-  return val;
+
+  for (const [_, number] of arr.entries()) {
+    const match = arr.find(
+      (matchingNumber: number) => number + matchingNumber === 2020
+    );
+    if (!!match) return number * match;
+  }
 };
