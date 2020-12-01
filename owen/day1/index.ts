@@ -12,14 +12,18 @@ const prepare = (input: string): number[] => {
 /**
  * Time to get out the sledge hammer...
  * @param input String input
+ * @param levels Number of numbers required to match
  */
-export const bruteForce = (input: string): number => {
+export const bruteForce = (input: string, levels: number = 2): number => {
   const arr = prepare(input);
 
-  for (const [_, number] of arr.entries()) {
-    const match = arr.find(
-      (matchingNumber: number) => number + matchingNumber === 2020
-    );
-    if (!!match) return number * match;
+  for (const [_, number1] of arr.entries()) {
+    for (const [_, number2] of arr.entries()) {
+      if (levels === 2 && number1 + number2 === 2020) return number1 * number2;
+      for (const [_, number3] of arr.entries()) {
+        if (levels === 3 && number1 + number2 + number3 === 2020)
+          return number1 * number2 * number3;
+      }
+    }
   }
 };
