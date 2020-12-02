@@ -17,7 +17,6 @@ test('sample input works for challenge 1', () => {
 
 test('real input works for challenge 1', () => {
   const result = bruteForce(input);
-  console.log(result);
   expect(result).toBe(567171);
 });
 
@@ -27,6 +26,5 @@ test('sample input works for challenge 2', () => {
 
 test('real input works for challenge 2', () => {
   const result = bruteForce(input, 3);
-  console.log(result);
   expect(result).toBe(212428694);
 });

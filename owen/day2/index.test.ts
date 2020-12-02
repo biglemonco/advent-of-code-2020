@@ -24,7 +24,6 @@ describe('day 2', () => {
   });
   test('challenge 2 real data', () => {
     const total = extractValidPasswordsByPosition(input);
-    console.log(total);
     expect(total).toBe(485);
   });
 });
