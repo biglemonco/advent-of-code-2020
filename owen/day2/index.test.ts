@@ -1,4 +1,7 @@
-import { extractValidPasswords } from './index';
+import {
+  extractValidPasswordsByLength,
+  extractValidPasswordsByPosition,
+} from './index';
 
 import input from './input.txt';
 
@@ -10,11 +13,18 @@ const sampleInput = `
 
 describe('day 2', () => {
   test('challenge 1 sample data', () => {
-    expect(extractValidPasswords(sampleInput)).toBe(2);
+    expect(extractValidPasswordsByLength(sampleInput)).toBe(2);
   });
   test('challenge 1 real data', () => {
-    const total = extractValidPasswords(input);
-    console.log(total);
+    const total = extractValidPasswordsByLength(input);
     expect(total).toBe(524);
+  });
+  test('challenge 2 sample data', () => {
+    expect(extractValidPasswordsByPosition(sampleInput)).toBe(1);
+  });
+  test('challenge 2 real data', () => {
+    const total = extractValidPasswordsByPosition(input);
+    console.log(total);
+    expect(total).toBe(485);
   });
 });
