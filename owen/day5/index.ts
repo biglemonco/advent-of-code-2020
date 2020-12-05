@@ -18,6 +18,11 @@ interface SeatCoordinates {
 const MAX_ROW = 127;
 const MAX_COL = 7;
 
+/**
+ * Each character in a string has instructions to change the min or max
+ * @param input 7 character string
+ * @param startingMax Number to start max on
+ */
 const getIndexFromRange = (input: string, startingMax: number) => {
 	let min = 0;
 	let max = startingMax;
@@ -30,6 +35,10 @@ const getIndexFromRange = (input: string, startingMax: number) => {
 	return max; // To turn it into an index
 }
 
+/**
+ * Get all the coordinates for the seat positions
+ * @param input String
+ */
 export const getSeatCoordinates = (input: string): SeatCoordinates => {
 	const [rowChars, colChars] = prepare(input);
 	const row = getIndexFromRange(rowChars, MAX_ROW);
