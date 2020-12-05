@@ -46,3 +46,14 @@ export const getSeatCoordinates = (input: string): SeatCoordinates => {
 	const seatId = (row * 8) + column;
 	return { row, column, seatId }
 }
+
+/**
+ * Loop through the seats and get the missing one
+ * @param range Array of number of seat IDS
+ */
+export const getMissingSeat = (range: number[]) => {
+	return range.find((seatId, i) => {
+		if (i === 0) return false;
+		return seatId !== range[i - 1] - 1;
+	}) + 1;
+}
