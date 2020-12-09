@@ -1,4 +1,4 @@
-import { findInfiniteValue } from './index';
+import { findInfiniteValue, findFinalRow } from './index';
 import input from './input.txt';
 
 const sampleInput = `
@@ -20,10 +20,10 @@ describe('day 8', () => {
 	test('challenge 1 real data', () => {
 		expect(findInfiniteValue(input)).toBe(1446);
 	})
-	// test('challenge 2 sample data', () => {
-	// 	expect(doSomething(sampleInput)).toBe(0);
-	// })
-	// test('challenge 2 real data', () => {
-	// 	expect(doSomething(input)).toBe(0);
-	// })
+	test('challenge 2 sample data', () => {
+		expect(findFinalRow(sampleInput)).toBe(8);
+	})
+	test('challenge 2 real data', () => {
+		expect(findFinalRow(input)).toBe(1403);
+	})
 })
