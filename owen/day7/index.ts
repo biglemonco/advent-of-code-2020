@@ -83,6 +83,6 @@ export const countBags = (input: string) => {
 
 	const uniqueBags = allBags.filter(onlyUnique);
 
-	console.log(bagsWithGoldDirectly, bagsWithGoldIndirectly, uniqueBags.length, times)
+	// console.log(bagsWithGoldDirectly, bagsWithGoldIndirectly, uniqueBags.length, times)
 	return uniqueBags.length;
 }
